@@ -28,7 +28,7 @@ regd_users.post("/login", (req,res) => {
     return res.status(404).json({ message: "Error Logging In"});
   }
 
-  // Check if value login
+  // Check if login is valid
   if (!authenticatedUser(username, password)) {
     return res.status(208).json({ message: "Invalid Login. Check username or password."});
   }
@@ -41,7 +41,7 @@ regd_users.post("/login", (req,res) => {
     accessToken, username
   };
   
-  return res.status(200).json({ message: "User succesfully logged in"});
+  return res.status(200).json({ message: "User successfully logged in"});
 });
 
 
