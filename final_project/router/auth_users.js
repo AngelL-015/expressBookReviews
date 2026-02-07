@@ -65,7 +65,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   // Add or Update a review
   books[isbn].reviews[username] = review.trim();
   
-  return res.status(200).json({message: `${username} has made a change to ${isbn}'s reviews`});
+  return res.status(200).json(books[isbn]);
 });
 
 
@@ -88,7 +88,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
   // Delete a review
   delete books[isbn].reviews[username];
   
-  return res.status(200).json({message: `${username} has deleted a review for ${isbn}`});  
+  return res.status(200).json(books[isbn]);  
 });
 
 
